@@ -1,0 +1,36 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <script src="https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js"></script>
+  
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Western Store</a>
+
+      <button
+        class="btn btn-primary btn-margin"
+        routerLink="/">
+          Home
+      </button>
+
+      <button
+        class="btn btn-primary btn-margin"
+        *ngIf="!auth.isAuthenticated()"
+        (click)="auth.login()">
+          Log In
+      </button>
+
+      <button
+        class="btn btn-primary btn-margin"
+        *ngIf="auth.isAuthenticated()"
+        (click)="auth.logout()">
+          Log Out
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+<router-outlet></router-outlet>
+</main>
