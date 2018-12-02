@@ -34,8 +34,12 @@
 <main class="container">
   
 <app-home></app-home>
-<app-products></app-products>
-<app-message></app-message>
+<nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/product">product</a>
+  </nav>
 <router-outlet></router-outlet>
+<app-message></app-message>
+
 
 </main>

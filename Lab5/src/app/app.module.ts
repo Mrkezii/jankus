@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { MessageComponent } from './message/message.component';
 import { ManagerComponent } from './manager/manager.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ManagerComponent } from './manager/manager.component';
     ProductsComponent,
     ProductDetailsComponent,
     MessageComponent,
-    ManagerComponent
+    ManagerComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

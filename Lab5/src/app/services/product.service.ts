@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Productdemo } from '../models/product.model';
+import {Productdemo } from '../models/product.model';
 import 'rxjs/add/operator/map';
 import { Observable, of } from 'rxjs';
 import { CachingServiceBase } from './caching.service';
@@ -16,5 +16,11 @@ export class ProductService {
     this.messageService.add('ProductService: fetched products');
     return of(PRODUCT);
   }
-}
+
+    getProd(id: number): Observable<Productdemo> {
+      // TODO: send the message _after_ fetching the hero
+      this.messageService.add(`ProductService: fetched products id=${id}`);
+      return of(PRODUCT.find(products => products.id === id));
+    }
+  }
 

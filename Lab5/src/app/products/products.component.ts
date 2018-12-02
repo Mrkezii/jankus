@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Productdemo } from '../models/product.model';
-import {ProductService} from '../services/product.service';
+import { ProductService } from '../services/product.service';
 import { PRODUCT } from '../products/mock.product';
 import { Observable, of } from 'rxjs';
 import { MessageService } from '../services/message.service';
@@ -12,18 +12,19 @@ import { MessageService } from '../services/message.service';
 })
 export class ProductsComponent implements OnInit {
 
-selectedProducts: Productdemo;
-product: Productdemo[];
-constructor(public productService: ProductService) { }
+  //selectedProducts: Productdemo;
+  product: Productdemo[];
+  constructor(private productService: ProductService) { }
 
-  ngOnInit() {this.getProducts();
+  ngOnInit() {
+    this.getProducts();
   }
 
-  onSelect(products: Productdemo): void{ 
-    this.selectedProducts = products;
-  }
+  //onSelect(products: Productdemo): void{ 
+  // this.selectedProducts = products;
+  //}
   getProducts(): void {
     this.productService.getProduct()
-    .subscribe(product => this.product = product );
+      .subscribe(product => this.product = product);
   }
 }

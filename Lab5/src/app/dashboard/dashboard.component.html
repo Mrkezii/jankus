@@ -1,0 +1,9 @@
+<h3>Top Products Available</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let products of product" class="col-1-4"
+      routerLink="/detail/{{products.id}}">
+    <div class="module products">
+      <h4>{{products.item}}</h4>
+    </div>
+  </a>
+</div>

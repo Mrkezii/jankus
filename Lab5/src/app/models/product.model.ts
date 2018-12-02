@@ -1,6 +1,6 @@
 //import { Ingredients } from './ingredient.model';
 
-export class Productdemo {
+export class Productdemo  {
   public id: number;
   public item: string;
   //public description: string;
