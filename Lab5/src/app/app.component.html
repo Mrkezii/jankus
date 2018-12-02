@@ -1,18 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+
   <script src="https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js"></script>
   
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Western Store</a>
+      <a class="navbar-brand" href="#"></a>
 
       <button
         class="btn btn-primary btn-margin"
         routerLink="/">
           Home
       </button>
-
+<span> </span>
       <button
         class="btn btn-primary btn-margin"
         *ngIf="!auth.isAuthenticated()"
@@ -32,5 +32,10 @@
 </nav>
 
 <main class="container">
+  
+<app-home></app-home>
+<app-products></app-products>
+<app-message></app-message>
 <router-outlet></router-outlet>
+
 </main>

@@ -1,0 +1,55 @@
+<h1>Products</h1>
+<h2 id="header1">Products</h2>
+<ul id="product1"></ul>
+<div>
+  Item: <input type="text" name="Item" id="product2" placeholder="" maxlength="200" />
+  <br>
+  price <input type="number" name="price" id="price1" />
+  <br>
+  Quantity <input type="number" name="Quantity" id="Quantity1" />
+  <br>
+   Tax <input type="number" name="Tax" id="Tax1" />
+   <br>
+  <button onclick="save()"> Create New Item </button>
+  
+</div>
+
+
+<p>Click "Create" button to update the list of records in the database.</p>
+<section>
+
+ 
+  {{!-- <table style="width: 60%" , th=" solidblack">
+    <tr>
+      <th>Item </th>
+      <th> Quantity </th>
+      <th> Price </th>
+    </tr>
+  </table> --}}
+  <div id="view"></div>
+
+  <button id="h" onclick="getProd()"> Get All Items </button>
+
+  </div>
+</section>
+
+<section id = "newsection">
+<form id="form-id"  >
+ 
+</form>
+</section>
+<form id = "newform">
+ <input type = "text" id ="oneitem" maxlength="200">
+  <button  onclick="getById()" > GET WITH ID </button>
+</form>
+<div id ="display">
+  
+</div>
+
+  <a href="#">Home</a> | <a href="#">Browse</a> | <a href="#">Search</a>
+</p>
+<p>
+  <em>Copyright &copy; Western Store</em>
+</p>
+
+<script type='text/javascript' src="script.js"></script>
