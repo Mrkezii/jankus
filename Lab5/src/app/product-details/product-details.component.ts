@@ -24,8 +24,8 @@ export class ProductDetailsComponent implements OnInit {
     }
      getProducts(): void {
       const id = +this.route.snapshot.paramMap.get('id');
-      //this.productService.getProd(id)
-     // .subscribe(products => this.products = products);
+      this.productService.getProd(id)
+      .subscribe(products => this.products = products);
     }
     goBack(): void {
       this.location.back();

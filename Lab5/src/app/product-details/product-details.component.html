@@ -1,9 +1,9 @@
 <div *ngIf="products">
-    <h2>{{products.Item | uppercase}} Details</h2>
+    <h2>{{products.item | uppercase}} Details</h2>
     <div><span>id: </span>{{products.id}}</div>
     <div>
         <label>item:
-          <input [(ngModel)]="products.Item" placeholder="item">
+          <input [(ngModel)]="products.item" placeholder="item">
         </label>
       </div> 
     </div>
