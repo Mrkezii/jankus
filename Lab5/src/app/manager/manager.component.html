@@ -1,50 +1,51 @@
 
 <div>
-  <mat-table  [dataSource]="dataSource">
+  <mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="Item">
       <mat-header-cell *matHeaderCellDef>Item  </mat-header-cell>
-      <mat-cell *matCellDef="let user">
-          <mat-form-field floatLabel="never">
-              <input matInput placeholder="Item" [value]="user.Item" [(ngModel)]="user.Item">
-            </mat-form-field> 
-      </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="price">
-      <mat-header-cell *matHeaderCellDef> price </mat-header-cell>
-      <mat-cell *matCellDef="let user"> 
-          <mat-form-field floatLabel="never">
-              <input matInput placeholder="price" type ="number" [value]="user.price" [(ngModel)]="user.price">
-            </mat-form-field>
-         </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="Quantity">
-      <mat-header-cell *matHeaderCellDef> quantity</mat-header-cell>
-      <mat-cell *matCellDef="let user"> 
-          <mat-form-field floatLabel="never">
-              <input matInput placeholder="Quantity" type ="number" [value]="user.Quantity" [(ngModel)]="user.Quantity">
-            </mat-form-field>  </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="Tax">
-      <mat-header-cell *matHeaderCellDef> tax</mat-header-cell>
-      <mat-cell *matCellDef="let user">
-          <mat-form-field floatLabel="never">
-              <input matInput placeholder="Tax"  type ="Number" [value]="user.Tax" [(ngModel)]="user.Tax">
-            </mat-form-field> </mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="actions">
-        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
-        <mat-cell *matCellDef="let row" >
-             <button mat-button >Edit </button> 
-             <button mat-button (click)="user.newUser()">Update</button>
-             <button mat-button color ="accent" focusable="false" (click)="user.cancelOrDelete()">Delete
-             </button> 
+<mat-cell *matCellDef="let user">
+        <mat-form-field floatLabel="never">
+          <input matInput placeholder="Item" [value]="user.Item" [(ngModel)]="user.Item">
+          </mat-form-field>
         </mat-cell>
-    </ng-container> 
+      </ng-container>
+      <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef> price </mat-header-cell>
+<mat-cell *matCellDef="let user">
+          <mat-form-field floatLabel="never">
+            <input matInput placeholder="price" type ="number" [value]="user.price" [(ngModel)]="user.price">
+            </mat-form-field>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="Quantity">
+          <mat-header-cell *matHeaderCellDef> quantity</mat-header-cell>
+<mat-cell *matCellDef="let user">
+            <mat-form-field floatLabel="never">
+              <input matInput placeholder="Quantity" type ="number" [value]="user.Quantity || user.quantity " [(ngModel)]="user.Quantity || user.quantity ">
+              </mat-form-field>
+            </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="Tax">
+            <mat-header-cell *matHeaderCellDef> tax</mat-header-cell>
+<mat-cell *matCellDef="let user">
+              <mat-form-field floatLabel="never">
+                <input matInput placeholder="Tax"  type ="Number" [value]="user.Tax" [(ngModel)]="user.Tax">
+                </mat-form-field>
+              </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="actions">
+              <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+<mat-cell *matCellDef="let user">
+                <button mat-button (click)="updateUser(user)">Update</button>
+                <button mat-button color ="accent" focusable="false" (click)="cancelOrDelete(user)">Delete
+                </button>
+              </mat-cell>
+            </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-   
-  </mat-table>
-  
-</div>
-  <div>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+          </mat-table>
+
+        </div>
+        <div>
