@@ -37,7 +37,7 @@
               <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
 <mat-cell *matCellDef="let user">
                 <button mat-button (click)="updateUser(user)">Update</button>
-                <button mat-button color ="accent" focusable="false" (click)="cancelOrDelete(user)">Delete
+                <button mat-button color ="accent" focusable="false" (click)="cancelOrDelete(user._id)">Delete
                 </button>
               </mat-cell>
             </ng-container>

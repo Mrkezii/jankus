@@ -33,6 +33,7 @@ export class ManagerService {
   private serviceUrl = "http://localhost:7070/products/test";
   private posturl = "http://localhost:7070/products/create";
   private putUrl = "http://localhost:7070/products";
+
   constructor(private http: HttpClient) {}
   getUser() {
     return this.http.get<User[]>(this.serviceUrl);
@@ -46,5 +47,11 @@ export class ManagerService {
     console.log(url);
     console.log(user);
     return this.http.put<User>(url, user);
+  }
+  deleteUser(user: number): Observable<{}> {
+    console.log(`dleted`);
+    const deleteUrl = `${this.putUrl}/${user}/delete`;
+    console.log(deleteUrl);
+    return this.http.delete(deleteUrl);
   }
 }

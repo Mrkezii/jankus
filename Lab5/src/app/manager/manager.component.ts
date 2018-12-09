@@ -38,10 +38,6 @@ export class ManagerComponent implements OnInit {
   @Output() AppComponentChange = new EventEmitter<User[]>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  cancelOrDelete(s) {
-    console.log(s);
-  }
-
   ngOnInit() {
     this.managerService.getUser().subscribe((data: User[]) => {
       console.log(data);
@@ -53,6 +49,10 @@ export class ManagerComponent implements OnInit {
     this.managerService
       .updateUser(user)
       .subscribe(user => this.user.push(user));
+  }
+
+  cancelOrDelete(user) {
+    this.managerService.deleteUser(user).subscribe();
   }
 }
 export class UserDataSource extends MatTableDataSource<any> {
