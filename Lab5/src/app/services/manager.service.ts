@@ -49,9 +49,7 @@ export class ManagerService {
     return this.http.put<User>(url, user);
   }
   deleteUser(user: number): Observable<{}> {
-    console.log(`dleted`);
     const deleteUrl = `${this.putUrl}/${user}/delete`;
-    console.log(deleteUrl);
     return this.http.delete(deleteUrl);
   }
 }

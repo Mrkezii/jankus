@@ -53,6 +53,8 @@ export class ManagerComponent implements OnInit {
 
   cancelOrDelete(user) {
     this.managerService.deleteUser(user).subscribe();
+    alert(`Item deleted`);
+    window.location.reload();
   }
 }
 export class UserDataSource extends MatTableDataSource<any> {
